@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class TodoRepository {
+public class InMemoryTodoRepository implements ITodoRepository {
     private final List<Todo> todos = new ArrayList<>(Arrays.asList(
             new Todo("1", "Buy groceries"),
             new Todo("2", "Buy groceries"),
