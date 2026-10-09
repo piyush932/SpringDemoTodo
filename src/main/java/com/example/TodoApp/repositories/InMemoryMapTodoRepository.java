@@ -10,8 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
-@Profile("prod")
+//@Repository
+//@Profile("prod")
+@Repository("inMemoryMapTodoRepository")
 public class InMemoryMapTodoRepository implements ITodoRepository {
 
     private Map<String, Todo> todos = new HashMap<>();
