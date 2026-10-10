@@ -18,7 +18,14 @@ public class InMemoryTodoRepository implements ITodoRepository {
             new Todo("3", "Buy groceries")
     ));
 
+    @Override
     public List<Todo> findAll() {
         return todos;
+    }
+
+    @Override
+    public Todo save(Todo todo) {
+        todos.add(todo);
+        return todo;
     }
 }

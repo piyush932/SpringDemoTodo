@@ -17,9 +17,15 @@ public class InMemoryMapTodoRepository implements ITodoRepository {
 
     private Map<String, Todo> todos = new HashMap<>();
 
-
+    @Override
     public List<Todo> findAll() {
         return new ArrayList<Todo>(todos.values());
+    }
+
+    @Override
+    public Todo save(Todo todo){
+        todos.put(todo.getId(),todo);
+        return todo;
     }
 
 }

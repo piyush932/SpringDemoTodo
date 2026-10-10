@@ -4,9 +4,7 @@ import com.example.TodoApp.schema.Todo;
 import com.example.TodoApp.services.TodoService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +18,10 @@ public class TodoController {
     public List<Todo> getAllTodos() {
         return todoService.getAllTodos();
     }
+
+    @PostMapping
+    public Todo createTodo(@RequestBody Todo todo){
+        return todoService.createTodo(todo);
+    }
+
 }
